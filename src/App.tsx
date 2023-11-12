@@ -1,4 +1,5 @@
 import './App.css';
+import './Components/UI/Alert/Alert.css';
 import {useState} from 'react';
 import Modal from './Components/UI/Modal/Modal';
 import Alert from './Components/UI/Alert/Alert';
@@ -11,7 +12,7 @@ const App = () => {
 
   return (
     <>
-      <button className="w-100 btn btn-primary" onClick={() => setShowModal(true)}>
+        <button className="w-100 btn btn-primary mb-2" onClick={() => setShowModal(true)}>
         Show Modal
       </button>
 
@@ -21,11 +22,11 @@ const App = () => {
           </div>
         </Modal>
       
-        <Alert show={showAlert} type='warning' onDismiss={() => setShowAlert(!showAlert)}>
+        <Alert show={showAlert} type='warning mb-2' onDismiss={() => setShowAlert(!showAlert)}>
           <p>This is a warning type alert</p>
         </Alert>
 
-      <Alert show={showAlertSecond} type='success'>
+      <Alert show={showAlertSecond} type='success mb-2'>
         <p>This is a warning type alert</p>
       </Alert>
     </>

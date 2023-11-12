@@ -1,0 +1,19 @@
+.warning {
+  background: #e3de77;
+  padding: 15px 10px 5px 10px;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.warning > button {
+  background: #e8e59f;
+  border-radius: 10px;
+  border: 2px solid #b7b476;
+}
+
+.success {
+  background: #8bc976;
+  padding: 15px 10px 5px 10px;
+  border-radius: 10px;
+  font-weight: bold;
+}
