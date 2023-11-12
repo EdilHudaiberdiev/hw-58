@@ -1,25 +1,20 @@
-// import React from 'react';
-//
-// interface Props extends React.PropsWithChildren{
-//   show: boolean;
-//   title: string;
-//   onClose: React.MouseEventHandler;
-// }
-// const Alert:React.FC<Props> = ({onClose, children}) => {
-//   const onInnerClick = (event: React.MouseEvent) => {
-//     event.stopPropagation();
-//   };
-//
-//   return (
-//     <>
-//       <div className="modal show" style={{display: show ? 'block': 'none'}}>
-//       <div className="alert-container">
-//         <p>alert</p>
-//         <button onClick={onInnerClick}>x</button>
-//       </div>
-//
-//     </>
-//   );
-// };
-//
-// export default Alert;
+import React from 'react';
+
+interface Props extends React.PropsWithChildren{
+  show?: boolean;
+  type: string;
+  onDismiss?: React.MouseEventHandler;
+}
+const Alert:React.FC <Props> = ({show=true, type, onDismiss, children}) => {
+  return ( <>
+    {show ?
+      <div className={type} style={{display: show ? 'block': 'none'}}>
+        {onDismiss === undefined? null : <button onClick={onDismiss}>X</button>}
+        {children}
+      </div>
+      : null}
+  </>
+  );
+};
+
+export default Alert;
